@@ -1,5 +1,5 @@
 name: alfresco 
 description: |
-    alfresco 
-version: 0
+  Alfresco server
+version: 5.0.0.b-rancher1
 category: Office

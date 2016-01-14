@@ -1,5 +1,5 @@
-name: graphite 
- description: |
-    # Graphite
- version: 0
- category: Monitoring
+name: Graphite
+description: |
+  Graphite server
+version: 0.9.15-rancher1
+category: "Monitoring"
