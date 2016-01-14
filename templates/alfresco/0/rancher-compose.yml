@@ -1,0 +1,4 @@
+myalfresco:
+  scale: 2
+database:
+  scale: 1
