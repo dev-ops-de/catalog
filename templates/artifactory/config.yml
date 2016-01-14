@@ -1,0 +1,5 @@
+name: Artifactory 
+description: |
+  Artifactory server
+version: 4.4.1.b-rancher1
+category: "Office"
