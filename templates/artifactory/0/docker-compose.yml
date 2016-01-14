@@ -2,5 +2,5 @@ artifactory:
   tty: true
   image: jfrog-docker-reg2.bintray.io/jfrog/artifactory-oss:4.4.1
   ports:
-  - 18080:8080
+  - 18081:8081
 
