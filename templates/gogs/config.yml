@@ -1,0 +1,5 @@
+name: Gogs
+description: |
+  Gogs: A self-hosted Git service written in Go.
+version: latest
+category: "Git"

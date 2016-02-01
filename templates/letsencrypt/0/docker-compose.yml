@@ -1,0 +1,14 @@
+letsencrypt:
+  image: quay.io/letsencrypt/letsencrypt:latest
+  ports:
+    - "18443:443"
+    - "18080:80"
+  labels:
+    io.rancher.container.hostname_override: container_name
+    io.rancher.scheduler.affinity:host_label_soft: ${HOST_LABEL}
+    io.rancher.container.start_once: true
+  volumes:
+    - ${CERTS}
+    - ${LIB}
+  command:
+    - auth -d ${DOMAINS}

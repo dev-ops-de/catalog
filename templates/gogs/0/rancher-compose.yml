@@ -1,0 +1,44 @@
+.catalog:
+  name: "Gogs"
+  version: "latest"
+  description: |
+    "Gogs: A self-hosted Git service written in Go. fmi: https://github.com/rosstimson/docker-gogs"
+  uuid: gogs-0
+  minimum_rancher_version: v0.44.0
+  questions:
+    - variable: "DATA_PATH"
+      label: "Gogs data"
+      description: "local data path for repos"
+      type: "string"
+      required: true
+    - variable: "SQL_DATA_PATH"
+      label: "SQL data"
+      description: "local data path for repos"
+      type: "string"
+    - variable: "VOLUME_DRIVER"
+      label: "Volume driver"
+      description: "Gluster Volume Driver"
+      type: "string"
+    - variable: "SQL_ROOT_PASSWORD"
+      label: "SQL Root Password"
+      description: "SQL Admin Password"
+      type: "string"
+      required: true
+    - variable: "SQL_DATABASE"
+      label: "MySQL Database"
+      description: "db for the gogs server"
+      type: "string"
+      required: true
+      default: "gogs"
+    - variable: "SQL_USER"
+      label: "MySQL User"
+      description: "user for the gogs server"
+      type: "string"
+      required: true
+      default: "gogs"
+    - variable: "SQL_PASSWORD"
+      label: "MySQL Password"
+      description: "password the gogs user"
+      type: "string"
+      required: true
+      default: "gogs"

@@ -1,0 +1,31 @@
+.catalog:
+  name: "LetsEncrypt"
+  version: "latest"
+  description: |
+    "Let’s Encrypt is a new Certificate Authority: https://letsencrypt.org"
+  uuid: letsencrypt-0
+  minimum_rancher_version: v0.44.0
+  questions:
+    - variable: "DOMAINS"
+      label: "Domains"
+      description: " , separated"
+      type: "string"
+      required: true
+    - variable: "HOST_LABEL"
+      label: "Host label"
+      description: "Specify a Rancher host label here that will be used to determine where this container will be shipped."
+      type: "string"
+      default: role=loadbalancer
+      required: true
+    - variable: "CERTS"
+      label: "Cert Path"
+      description: "Specify a where your certs should be placed"
+      type: "string"
+      default: "/var/lib/letsencrypt:/var/lib/letsencrypt"
+      required: true
+    - variable: "LIB"
+      label: "Library Path"
+      description: "Specify a path for the library"
+      type: "string"
+      default: "/etc/letsencrypt:/etc/letsencrypt"
+      required: true

@@ -1,0 +1,29 @@
+.catalog:
+  name: 'Wordpress'
+  version: latest
+  uuid: 'wordpress-0'
+  questions:
+  - variable: DOMAIN
+    description: 'Domain name'
+    label: 'Domain:'
+    required: true
+    default: vibioh.fr
+    type: string
+  - variable: WORDPRESS_NAME
+    description: 'Wordpress instance name'
+    label: 'Wordpress name:'
+    required: true
+    default: demo
+    type: string
+  - variable: WORDPRESS_PASSWORD
+    description: 'Wordpress MySQL database password'
+    label: 'Database password:'
+    required: true
+    default: W0RDPR3SS!
+    type: string
+  - variable: MYSQL_PASSWORD
+    description: 'MySQL root password'
+    label: 'MySQL password:'
+    required: true
+    default: s3Cr3T!
+    type: string

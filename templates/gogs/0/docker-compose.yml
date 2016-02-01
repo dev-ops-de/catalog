@@ -1,0 +1,26 @@
+gogs:
+  image: gogs/gogs
+  links:
+    - db
+  ports:
+    - "10022:22"
+    - "10080:3000"
+  labels:
+    io.rancher.container.hostname_override: container_name
+    io.rancher.scheduler.affinity:container: db
+  volumes:
+    - ${DATA_PATH}:/data
+  volume_driver: ${VOLUME_DRIVER}
+db:
+  image: mariadb:10
+  volumes:
+    - ${SQL_DATA_PATH}:/var/lib/mysql
+  volume_driver: ${VOLUME_DRIVER}
+  environment:
+    MYSQL_ROOT_PASSWORD: ${SQL_ROOT_PASSWORD}
+    MYSQL_DATABASE: ${SQL_DATABASE}
+    MYSQL_USER: ${SQL_USER}
+    MYSQL_PASSWORD: ${SQL_PASSWORD}
+  labels:
+    io.rancher.container.hostname_override: container_name
+    io.rancher.scheduler.affinity:host_label_soft: ${HOST_LABEL}

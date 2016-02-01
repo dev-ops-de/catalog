@@ -1,0 +1,5 @@
+name: LetsEncrypt
+description: |
+  "Let’s Encrypt is a new Certificate Authority: https://letsencrypt.org"
+version: latest
+category: "Security"
