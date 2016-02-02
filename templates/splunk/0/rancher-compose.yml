@@ -1,0 +1,25 @@
+.catalog:
+  name: "Splunk"
+  version: "latest"
+  description: |
+    "Splunk: Big Data Logging"
+  uuid: splunk-0
+  minimum_rancher_version: v0.44.0
+  questions:
+    - variable: "SPLUNK_PORT"
+      label: 'Port:'
+      required: true
+      default: 18000
+      type: int
+    - variable: SPLUNK_ETC_DIR
+      description: 'Data & configuration directory'
+      label: 'Directory:'
+      required: true
+      default: /opt/splunk
+      type: string
+    - variable: SPLUNK_VAR_DIR
+      description: 'Data & configuration directory'
+      label: 'Directory:'
+      required: true
+      default: /opt/splunk
+      type: string

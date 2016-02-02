@@ -1,0 +1,5 @@
+name: Splunk
+description: |
+  Splunk: Big Data Logging
+version: latest
+category: "Splunk"
