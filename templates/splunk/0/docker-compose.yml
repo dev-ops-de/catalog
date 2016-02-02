@@ -1,13 +1,8 @@
-vsplunk:
-  image: busybox
-  volumes:
-    - ${SPLUNK_ETC_DIR}/etc
-    - ${SPLUNK_VAR_DIR}/var
-
 splunk:
   image: outcoldman/splunk:latest
   hostname: splunk
-  volumes_from:
-    - vsplunk
+  volumes:
+    - ${SPLUNK_ETC_DIR}/etc
+    - ${SPLUNK_VAR_DIR}/var
   ports:
     - ${SPLUNK_PORT}:8000
