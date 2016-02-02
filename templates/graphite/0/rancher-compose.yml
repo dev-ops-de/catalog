@@ -1,1 +1,7 @@
-
+.catalog:
+  name: "Graphite"
+  version: "latest"
+  description: |
+    "Graphite Monitoring Tool"
+  uuid: graphite-0
+  minimum_rancher_version: v0.44.0
