@@ -1,0 +1,6 @@
+name: Sonatype Nexus
+description: |
+    Provides a ready to run SCM Manager instance
+version: 2.11.2
+category: Java
+maintainer: Fabio Napoleoni

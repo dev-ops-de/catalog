@@ -1,0 +1,15 @@
+.catalog:
+    name: "Sonatype Nexus"
+    version: "2.11.2"
+    description: "Nexus Artifacts Manager"
+nexus-data:
+  scale: 1
+nexus-server:
+  scale: 1
+  health_check:
+    port: 8081
+    interval: 2000
+    unhealthy_threshold: 3
+    strategy: none
+    healthy_threshold: 2
+    response_timeout: 2000
