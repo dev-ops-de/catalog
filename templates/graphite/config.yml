@@ -1,5 +1,5 @@
 name: Graphite
 description: |
   Graphite server
-version: 0.9.15-rancher1
+version: latest
 category: "Monitoring"
