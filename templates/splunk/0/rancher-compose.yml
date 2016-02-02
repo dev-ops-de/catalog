@@ -1,19 +1,25 @@
 .catalog:
-  name: "nginx"
+  name: "Splunk"
   version: "latest"
   description: |
-    "NGINX: NGINX Web and Loadbalancer Server"
-  uuid: nginx-0
+    "Splunk: Big Data Logging"
+  uuid: splunk-0
   minimum_rancher_version: v0.44.0
   questions:
-    - variable: "NGINX_PORT"
+    - variable: "SPLUNK_PORT"
       label: 'Port:'
       required: true
-      default: 80
+      default: 18000
       type: int
-    - variable: NGINX_DIR
+    - variable: SPLUNK_ETC_DIR
       description: 'Data & configuration directory'
       label: 'Directory:'
       required: true
-      default: /www/web01
+      default: /opt/splunk
+      type: string
+    - variable: SPLUNK_VAR_DIR
+      description: 'Data & configuration directory'
+      label: 'Directory:'
+      required: true
+      default: /opt/splunk
       type: string
