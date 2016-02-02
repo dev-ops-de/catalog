@@ -1,0 +1,7 @@
+nginx:
+  image: nginx:latest
+  hostname: nginx
+  volumes:
+    - ${NGINX_DIR}:/usr/share/nginx/html:ro
+  ports:
+    - ${NGINX_PORT}:80
