@@ -1,4 +1,32 @@
-myalfresco:
-  scale: 2
-database:
-  scale: 1
+.catalog:
+  name: "Alfresco"
+  version: "latest"
+  description: |
+    "Alfresco Linuxreplacement for MS Sharepoint"
+  uuid: alfresco-0
+  minimum_rancher_version: v0.44.0
+  questions:
+    - variable: ALFRESCOPORT
+      description: "Outside Port for Alfresco Container"
+      label: 'Port:'
+      required: true
+      default: 18080
+      type: int
+    - variable: PGPASS
+      description: 'Postgres User password'
+      label: 'Postgrespassword:'
+      required: true
+      default: alfresco
+      type: string
+    - variable: PGUSER
+      description: 'Postgres User'
+      label: 'Postgresuser:'
+      required: true
+      default: alfresco
+      type: string
+    - variable: PGDBNAME
+      description: 'Postgres DB Name'
+      label: 'Postgres-DB-Name:'
+      required: true
+      default: alfresco
+      type: string
