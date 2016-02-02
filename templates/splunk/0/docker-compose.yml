@@ -2,7 +2,6 @@ splunk:
   image: outcoldman/splunk:latest
   hostname: splunk
   volumes:
-    - ${SPLUNK_ETC_DIR}/etc:/opt/splunk
-    - ${SPLUNK_VAR_DIR}/var:/opt/splunk
+    - ${SPLUNK_DIR}:/opt/splunk
   ports:
     - ${SPLUNK_PORT}:8000
