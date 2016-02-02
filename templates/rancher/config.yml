@@ -1,4 +1,4 @@
-name: 'Wordpress'
-description: Blogging
-category: Blog
+name: 'Rancherserver'
+description: Administration
+category: Administration
 version: latest
