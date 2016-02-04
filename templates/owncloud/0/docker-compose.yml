@@ -1,6 +1,6 @@
 splunk:
   image: owncloud:latest
-  hostname: splunk
+  hostname: owncloud
   volumes:
     - ${OWNCLOUD_DIR}:/var/www/html
   ports:
