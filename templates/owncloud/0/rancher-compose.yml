@@ -1,0 +1,19 @@
+.catalog:
+  name: "Owncloud"
+  version: "latest"
+  description: |
+    "Owncloud: Private Data Hosting"
+  uuid: owncloud-0
+  minimum_rancher_version: v0.44.0
+  questions:
+    - variable: OWNCLOUD_PORT
+      label: 'Port:'
+      required: true
+      default: 80
+      type: int
+    - variable: OWNCLOUD_DIR
+      description: 'Data & configuration directory'
+      label: 'Directory:'
+      required: true
+      default: /www/owncloud
+      type: string

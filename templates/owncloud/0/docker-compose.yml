@@ -1,0 +1,7 @@
+splunk:
+  image: owncloud:latest
+  hostname: splunk
+  volumes:
+    - ${OWNCLOUD_DIR}:/var/www/html
+  ports:
+    - ${OWNCLOUD_PORT}:80
