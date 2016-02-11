@@ -11,4 +11,13 @@
       required: true
       default: 18000
       type: int
-
+    - variable: SPLUNK_DIR_ETC
+      label: 'Configuration Directory:'
+      required: true
+      default: "/opt/splunk/etc"
+      type: string
+    - variable: SPLUNK_DIR_VAR
+      label: 'Configuration Directory:'
+      required: true
+      default: "/opt/splunk/var"
+      type: string
