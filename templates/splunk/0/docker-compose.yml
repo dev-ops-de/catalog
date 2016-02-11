@@ -17,6 +17,8 @@ splunk:
     io.rancher.container.pull_image: always
   ports:
     - ${SPLUNK_PORT}:8000
+    - ${SPLUNK_CLUSTER_PORT}:8089
+    - ${SPLUNK_FORWARDER_PORT}:9997
 
 
 

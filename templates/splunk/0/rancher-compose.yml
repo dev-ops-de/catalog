@@ -21,3 +21,11 @@
       required: true
       default: "/opt/splunk/var"
       type: string
+    - variable: SPLUNK_CLUSTER_PORT
+      label: 'Splunk Cluster Port:'
+      default: 8089
+      type: int
+    - variable: SPLUNK_FORWARDER_PORT
+      label: 'Forwarder Receiver Port:'
+      default: 9997
+      type: int
