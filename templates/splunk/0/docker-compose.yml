@@ -7,12 +7,14 @@ vsplunk:
     - /opt/splunk/etc
     - /opt/splunk/var
 splunk:
+  restart: always
   image: outcoldman/splunk:latest
   hostname: splunk
   volumes_from:
     - vsplunk
   labels:
     io.rancher.sidekicks: vsplunk
+    io.rancher.container.pull_image: always
   ports:
     - ${SPLUNK_PORT}:8000
 
