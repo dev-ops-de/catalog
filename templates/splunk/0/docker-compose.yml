@@ -1,3 +1,10 @@
+vsplunk:
+  net: none
+  image: busybox
+  labels:
+      io.rancher.container.start_once: true
+  volumes:
+    - ${SPLUNK_DIR}
 splunk:
   image: outcoldman/splunk:latest
   hostname: splunk
@@ -5,15 +12,7 @@ splunk:
     - vsplunk
   ports:
     - ${SPLUNK_PORT}:8000
-vsplunk:
-  net: none
-  image: busybox
-  entrypoint: /bin/true
-  labels:
-      io.rancher.container.hostname_override: container_name
-      io.rancher.container.start_once: true
-  volumes:
-    - ${SPLUNK_DIR}
+
 
 
 
