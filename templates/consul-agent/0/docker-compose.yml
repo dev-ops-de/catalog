@@ -1,0 +1,31 @@
+consul-agent:
+  restart: always
+  tty: true
+  ports:
+    - 8301:8301
+    - 8301:8301/udp
+    - 8400:8400
+    - 8500:8500
+    - 8600:8600
+    - 8600:8600/udp
+  command: -encrypt="${encryption}" -dc="${datacenter}"
+  labels:
+    io.rancher.scheduler.global: true
+    io.rancher.scheduler.affinity:host_label_ne: service=consul
+    io.rancher.container.hostname_override: container_name
+    io.rancher.container.pull_image: always
+    io.rancher.sidekicks: consul-agent-datavolume
+  image: pk4media/consul-agent:0.6
+  volumes_from:
+    - consul-agent-datavolume
+  external_links:
+    - ${consul_server_service}:consul-server
+consul-agent-datavolume:
+  net: none
+  labels:
+    io.rancher.container.hostname_override: container_name
+    io.rancher.container.start_once: true
+  volumes:
+    - /data
+  entrypoint: /bin/true
+  image: busybox

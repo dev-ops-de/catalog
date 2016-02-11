@@ -1,0 +1,25 @@
+.catalog:
+  name: Consul Agent
+  version: 0.6-pk4media1
+  description: |
+    Consul Agent.
+  uuid: consul-agent-0
+  minimum_rancher_version: v0.56.0
+  questions:
+    - variable: encryption
+      description: Consul cluster encryption value
+      label: Encryption Key
+      type: string
+      required: true
+    - variable: datacenter
+      description: Datacenter name
+      label: Datacenter
+      type: string
+      required: true
+      default: dc1
+    - variable: consul_server_service
+      description: Consul Server service name
+      label: Consul Server Service
+      type: string
+      required: true
+      default: consul-server/consul-server

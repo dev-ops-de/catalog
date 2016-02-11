@@ -1,15 +1,22 @@
 .catalog:
-  name: "Vault"
-  version: "0.4.1"
+  name: "Vault Server"
+  version: "0.4-pk4media1"
   description: |
-    A tool for managing secrets.
-  minimum_rancher_version: "v0.46.0"
+    Vault Server.
+  uuid: vault-server-0
+  minimum_rancher_version: v0.56.0
   questions:
-    - variable: "scale"
-      description: "Number of Etcd nodes"
-      label: "Number of Nodes:"
-      required: true
-      default: 1
+    - variable: server_count
+      description: "Number of servers to bootstrap"
+      label: "Server Bootstrap Count"
       type: "int"
-etcd:
-  scale: "${scale}"
+      required: true
+      default: 3
+    - variable: consul_agent_service
+      description: Consul Agent service name
+      label: Consul Agent Service
+      type: string
+      required: true
+      default: consul-agent/consul-agent
+vault:
+  scale: ${server_count}

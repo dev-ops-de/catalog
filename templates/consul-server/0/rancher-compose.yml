@@ -1,0 +1,35 @@
+.catalog:
+  name: "Consul Server"
+  version: "0.6-pk4media1"
+  description: |
+    Consul Server leader cluster.
+  uuid: consul-server-0
+  minimum_rancher_version: v0.56.0
+  questions:
+    - variable: server_count
+      description: "Number of servers to bootstrap"
+      label: "Server Bootstrap Count"
+      type: "int"
+      required: true
+      default: 3
+    - variable: encryption
+      description: "Consul cluster encryption value"
+      label: "Encryption Key"
+      type: "string"
+      required: true
+    - variable: datacenter
+      description: "Datacenter name"
+      label: "Datacenter"
+      type: "string"
+      required: true
+      default: dc1
+    - variable: host_label_type
+      description: Host Label Preference Type
+      label: Host Label Type
+      type: enum
+      options:
+        - host_label
+        - host_label_soft
+      default: host_label_soft
+consul-server:
+  scale: ${server_count}

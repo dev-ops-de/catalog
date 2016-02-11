@@ -1,5 +1,5 @@
-name: Vault Server
+name: Consul Agent
 description: |
-  Vault server.
+  Consul agent cluster member.
 version: 0.4-pk4media1
 category: Config
