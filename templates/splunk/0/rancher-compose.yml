@@ -6,7 +6,7 @@
   uuid: splunk-0
   minimum_rancher_version: v0.44.0
   questions:
-    - variable: "SPLUNK_PORT"
+    - variable: SPLUNK_PORT
       label: 'Port:'
       required: true
       default: 18000
