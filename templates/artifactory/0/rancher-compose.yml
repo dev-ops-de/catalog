@@ -1,3 +1,7 @@
-artifactory:
-  scale: 1
-
+.catalog:
+  name: "Artifactory"
+  version: "latest"
+  description: |
+    "Artifactory"
+  uuid: artifactory-0
+  minimum_rancher_version: v0.44.0
