@@ -10,6 +10,8 @@ splunk:
   hostname: splunk
   volumes_from:
     - vsplunk
+  labels:
+    io.rancher.sidekicks: vsplunk
   ports:
     - ${SPLUNK_PORT}:8000
 
