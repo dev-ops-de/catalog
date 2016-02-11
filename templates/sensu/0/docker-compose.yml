@@ -1,0 +1,49 @@
+rabbitmq:
+  labels:
+    io.rancher.container.pull_image: always
+    vault.key: ${vault_token}
+    godaddy.bu.name: monitoring
+    godaddy.product.name: sensu
+  tty: true
+  image: artifactory.secureserver.net:10010/docker-zte-local/example:latest
+  stdin_open: true
+
+redis:
+  labels:
+    io.rancher.container.pull_image: always
+    vault.key: ${vault_token}
+    godaddy.bu.name: monitoring
+    godaddy.product.name: sensu
+  tty: true
+  image: artifactory.secureserver.net:10010/docker-zte-local/example:latest
+  stdin_open: true
+
+sensu-server:
+  labels:
+    io.rancher.container.pull_image: always
+    vault.key: ${vault_token}
+    godaddy.bu.name: monitoring
+    godaddy.product.name: sensu
+  tty: true
+  image: artifactory.secureserver.net:10010/docker-zte-local/example:latest
+  stdin_open: true
+
+sensu-api:
+  labels:
+    io.rancher.container.pull_image: always
+    vault.key: ${vault_token}
+    godaddy.bu.name: monitoring
+    godaddy.product.name: sensu
+  tty: true
+  image: artifactory.secureserver.net:10010/docker-zte-local/example:latest
+  stdin_open: true
+
+uchiwa:
+  labels:
+    io.rancher.container.pull_image: always
+    vault.key: ${vault_token}
+    godaddy.bu.name: monitoring
+    godaddy.product.name: sensu
+  tty: true
+  image: artifactory.secureserver.net:10010/docker-zte-local/example:latest
+  stdin_open: true

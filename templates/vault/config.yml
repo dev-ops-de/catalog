@@ -1,0 +1,5 @@
+name: Vault
+description: |
+  A tool for managing secrets.
+version: 0.4.1
+category: Security

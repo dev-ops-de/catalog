@@ -1,0 +1,26 @@
+.catalog:
+  name: "Sensu"
+  version: "0.21"
+  description: "Sensu Monitoring Service"
+  minimum_rancher_version: v0.46.0
+  questions:
+    - variable: vault_token
+      description: "Vault token containing team credentials"
+      label: "Vault Token"
+      type: "string"
+      required: true
+
+rabbitmq:
+  scale: 3
+
+redis:
+  scale: 2
+
+sensu-server:
+  scale: 1
+
+sensu-api:
+  scale: 1
+
+uchiwa:
+  scale: 1

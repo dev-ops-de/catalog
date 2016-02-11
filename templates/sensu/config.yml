@@ -1,0 +1,5 @@
+name: Sensu
+description: |
+  Sensu Monitoring Application
+version: 0.21
+category: Monitoring

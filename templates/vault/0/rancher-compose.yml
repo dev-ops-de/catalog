@@ -1,0 +1,15 @@
+.catalog:
+  name: "Vault"
+  version: "0.4.1"
+  description: |
+    A tool for managing secrets.
+  minimum_rancher_version: "v0.46.0"
+  questions:
+    - variable: "scale"
+      description: "Number of Etcd nodes"
+      label: "Number of Nodes:"
+      required: true
+      default: 1
+      type: "int"
+etcd:
+  scale: "${scale}"
