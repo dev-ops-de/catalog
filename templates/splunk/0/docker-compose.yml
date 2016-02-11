@@ -4,7 +4,8 @@ vsplunk:
   labels:
       io.rancher.container.start_once: true
   volumes:
-    - ${SPLUNK_DIR}
+    - /opt/splunk/etc
+    - /opt/splunk/var
 splunk:
   image: outcoldman/splunk:latest
   hostname: splunk

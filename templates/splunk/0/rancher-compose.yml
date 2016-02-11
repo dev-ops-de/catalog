@@ -11,9 +11,4 @@
       required: true
       default: 18000
       type: int
-    - variable: SPLUNK_DIR
-      description: 'Data & configuration directory'
-      label: 'Directory:'
-      required: true
-      default: /opt/splunk
-      type: string
+
