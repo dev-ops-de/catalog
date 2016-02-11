@@ -1,0 +1,21 @@
+postgres-datavolume:
+  image: nuxeo/postgres
+  labels:
+    io.rancher.container.start_once: 'true'
+    io.rancher.container.hostname_override: container_name
+  entrypoint: /bin/true
+  volumes:
+  - /var/lib/postgresql/data
+
+postgres:
+  image: nuxeo/postgres
+  labels:
+    io.rancher.sidekicks: postgres-datavolume   
+    io.rancher.container.hostname_override: container_name
+  environment:
+    PGDATA: /var/lib/postgresql/data/pgdata
+    POSTGRES_DB: ${dbname}
+    POSTGRES_USER: ${dbuser}
+    POSTGRES_PASSWORD: ${dbpassword}
+  volumes_from:
+  - postgres-datavolume
