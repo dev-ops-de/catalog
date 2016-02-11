@@ -1,0 +1,11 @@
+gocd-server:
+  labels:
+    io.rancher.container.pull_image: always
+    gocd.role: server
+  tty: true
+  image: rawmind/rancher-goserver:15.3.1-3
+  volumes:
+  - ${work_volume}:/opt/go-server/work
+  environment:
+  - SERVER_MEM=${mem_initial}m
+  - SERVER_MAX_MEM=${mem_max}m

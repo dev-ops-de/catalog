@@ -1,0 +1,10 @@
+vamp:
+  environment:
+    VAMP_DB_URL: http://elasticsearch:9200
+  external_links:
+  - ${zk_link}:zookeeper
+  - ${elasticsearch_link}:elasticsearch
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  image: rawmind/rancher-vamp:0.0.1

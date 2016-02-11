@@ -1,0 +1,38 @@
+.catalog:
+  name: Vamp gateway agent
+  version: 0.8.2-rancher1
+  description: |
+    (Experimental) Vamp gateway agent (vga).
+  minimum_rancher_version: v0.56.0
+  maintainer: "Raul Sanchez <rawmind@gmail.com>"
+  uuid: vga-0
+  questions:
+    - variable: "vga_scale"
+      description: "Number of vga nodes."
+      label: "Vga Nodes:"
+      required: true
+      default: 1
+      type: "int"
+    - variable: "zk_link"
+      description: |
+        Choose the Zookeeper service to use. 
+      label: "Zookeeper stack/service"
+      default: "zookeeper/zk"
+      required: true
+      type: "service"
+    - variable: "logstash_link"
+      description: |
+        Choose the logstash service to use.
+      label: "Logstash stack/service"
+      default: "logstash/logstash-collector"
+      required: true
+      type: "service"
+vamp-gateway:
+  scale: ${vga_scale}
+  health_check:
+    port: 1988
+    interval: 5000
+    unhealthy_threshold: 3
+    strategy: recreate
+    healthy_threshold: 2
+    response_timeout: 5000

@@ -1,0 +1,8 @@
+vamp-gateway:
+  external_links:
+  - ${zk_link}:zookeeper
+  - ${logstash_link}:logstash
+  labels:
+    io.rancher.container.pull_image: always
+  tty: true
+  image: rawmind/rancher-vamp-gateway-agent:0.0.1

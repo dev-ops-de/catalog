@@ -1,0 +1,33 @@
+.catalog:
+  name: Vamp
+  version: 0.8.2-rancher1
+  description: |
+    (Experimental) Vamp core.
+  minimum_rancher_version: v0.56.0
+  maintainer: "Raul Sanchez <rawmind@gmail.com>"
+  uuid: vamp-0
+  questions:
+    - variable: "zk_link"
+      description: |
+        Choose the Zookeeper service to use. 
+      label: "Zookeeper stack/service"
+      default: "zookeeper/zk"
+      required: true
+      type: "service"
+    - variable: "elasticsearch_link"
+      description: |
+        Choose the elasticsearch service to use.
+      label: "Elasticsearch stack/service"
+      default: "elasticsearch/elasticsearch-masters"
+      required: true
+      type: "service"
+vamp:
+  scale: 1
+  health_check:
+    port: 8080
+    interval: 5000
+    unhealthy_threshold: 3
+    strategy: recreate
+    healthy_threshold: 2
+    response_timeout: 5000
+

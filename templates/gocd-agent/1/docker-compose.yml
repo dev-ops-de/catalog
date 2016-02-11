@@ -1,0 +1,13 @@
+gocd-agent:
+  labels:
+    io.rancher.container.pull_image: always
+    gocd.role: agent
+  tty: true
+  image: rawmind/rancher-goagent:16.1.0-1
+  external_links:
+  - ${goserver_ip}:gocd-server
+  environment:
+  - AGENT_MEM=${mem_initial}m
+  - AGENT_MAX_MEM=${mem_max}m
+  - GO_SERVER=gocd-server
+  - GO_SERVER_PORT=${goserver_port}

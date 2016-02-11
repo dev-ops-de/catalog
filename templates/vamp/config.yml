@@ -1,0 +1,8 @@
+name: Vamp
+description: |
+  (Experimental) Vamp core
+version: 0.8.2-rancher1
+category: clustering
+maintainer: "Raul Sanchez <rawmind@gmail.com>"
+minimum_rancher_version: v0.56.0
+license: 
