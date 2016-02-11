@@ -1,5 +1,5 @@
-name: PostgreSQL for Nuxeo
+name: PostgreSQL
 description: |
-  PostgreSQL server stack with custom configurations for Nuxeo.
+  PostgreSQL server.
 version: 9.4
 category: Database
