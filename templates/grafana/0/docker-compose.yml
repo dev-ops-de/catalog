@@ -1,0 +1,34 @@
+grafana:
+  image: dahendel/grafana:2.6
+  links:
+  - postgres:postgres
+  external_links:
+  - es/es-clients:es
+  ports:
+  - "3000"
+  labels:
+    io.rancher.scheduler.affinity: role=mgt
+    
+postgres:
+  image: dahendel/alpine-postgres
+  environment:
+  - POSTGRES_USER=root
+  - POSTGRES_DB=grafana
+  - POSTGRES_PASSWORD=grafanaCloud
+  ports:
+  - "5432:5432"
+  volumes_from:
+  - pg-data
+  labels:
+    io.rancher.scheduler.affinity: role=mgt
+    io.rancher.sidekicks: pg-data
+pg-data:
+  image: alpine
+  volumes:
+  - /var/lib/postgresql/data
+  command:
+  - sh
+  labels:
+    io.rancher.scheduler.affinity: role=mgt
+    io.rancher.container.start_once: true
+

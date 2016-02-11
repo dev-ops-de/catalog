@@ -1,0 +1,4 @@
+name: "Grafana"
+description: "Metrics Dashboards"
+version: "2.6"
+category: "Metrics"
