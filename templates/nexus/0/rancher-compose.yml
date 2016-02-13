@@ -2,6 +2,17 @@
     name: "Sonatype Nexus"
     version: "2.11.2"
     description: "Nexus Artifacts Manager"
+    questions:
+      - variable: NEXUS_PORT
+        label: 'NEXUS Dashboard Port:'
+        required: true
+        default: 9001
+        type: int
+      - variable: NEXUS_VOLUME
+        label: 'NEXUS Volume:'
+        required: true
+        default: '/www/nexus/'
+        type: string
 nexus-data:
   scale: 1
 nexus-server:
@@ -13,3 +24,4 @@ nexus-server:
     strategy: none
     healthy_threshold: 2
     response_timeout: 2000
+
