@@ -15,7 +15,7 @@
       label: 'Mesos Master IP:'
       required: true
       default: 127.0.0.1
-      type: int
+      type: string
     - variable: MASTER_CLUSTER_PORT
       label: 'Mesos Cluster Port:'
       default: 9000
