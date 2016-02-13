@@ -1,7 +1,0 @@
-.catalog:
-  name: "Mesos Cluster"
-  version: "latest"
-  description: |
-    "Mesos test cluster"
-  uuid: mesos-0
-  minimum_rancher_version: v0.44.0
