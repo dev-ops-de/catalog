@@ -1,5 +1,5 @@
 .catalog:
-  name: "Mesos_Master"
+  name: "Mesosmaster"
   version: "latest"
   description: |
     "Mesos Cluster Master"

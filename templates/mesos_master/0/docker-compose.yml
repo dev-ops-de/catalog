@@ -1,12 +1,12 @@
 mesos-master:
-  hostname: ${mesos_hostname}
+  hostname: ${MESOS_HOSTNAME}
   image: mrbobbytables/mesos-master:latest
   labels:
     io.rancher.container.start_once: true
   restart: always
   environment:
   - ENVIRONMENT=${MESOS_ENVIRONMENT}
-  - PARENT_HOST=$(mesos_hostname)
+  - PARENT_HOST=$(MESOS_HOSTNAME)
   - LIBPROCESS_PORT=9000
   - LIBPROCESS_ADVERTISE_IP=${MESOS_MASTER_IP}
   - MESOS_ADVERTISE_PORT=5050
