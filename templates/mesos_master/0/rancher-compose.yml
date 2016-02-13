@@ -1,0 +1,43 @@
+.catalog:
+  name: "Mesos_Master"
+  version: "latest"
+  description: |
+    "Mesos Cluster Master"
+  uuid: mesosmaster-0
+  minimum_rancher_version: v0.56.0
+  questions:
+    - variable: MASTER_PORT
+      label: 'Master Dashboard Port:'
+      required: true
+      default: 5050
+      type: int
+    - variable: MESOS_MASTER_IP
+      label: 'Mesos Master IP:'
+      required: true
+      default: 127.0.0.1
+      type: int
+    - variable: MASTER_CLUSTER_PORT
+      label: 'Mesos Cluster Port:'
+      default: 9000
+      type: int
+    - variable: MESOS_ENVIRONMENT
+      label: 'Environmentname:'
+      default: production
+      type: string
+    - variable: MESOS_CLUSTERNAME
+      label: 'Clustername:'
+      default: theevilcluster
+      type: string
+    - variable: MASTER_QUORUM
+      label: 'Mesos Quorum:'
+      required: true
+      default: 2
+      type: int
+    - variable: MESOS_ZOOKEEPER_IPS
+      label: 'Zookeeper IPS:'
+      default: '127.0.0.1:2181,127.0.0.1:2181,127.0.0.1:2181'
+      type: string
+    - variable: MESOS_HOSTNAME
+      label: 'Nodename:'
+      default: master-001
+      type: string

@@ -1,0 +1,22 @@
+mesos-master:
+  hostname: ${mesos_hostname}
+  image: mrbobbytables/mesos-master:latest
+  labels:
+    io.rancher.container.start_once: true
+  restart: always
+  environment:
+  - ENVIRONMENT=${MESOS_ENVIRONMENT}
+  - PARENT_HOST=$(mesos_hostname)
+  - LIBPROCESS_PORT=9000
+  - LIBPROCESS_ADVERTISE_IP=${MESOS_MASTER_IP}
+  - MESOS_ADVERTISE_PORT=5050
+  - MESOS_ADVERTISE_IP=${MESOS_MASTER_IP}
+  - MESOS_LOG_DIR=/var/log/mesos
+  - MESOS_LOGGING_LEVEL=WARNING
+  - MESOS_ZK=zk://${MESOS_ZOOKEEPER_IPS}/mesos
+  - MESOS_QUORUM=${MESOS_QUORUM}
+  - MESOS_CLUSTER=${MESOS_CLUSTERNAME}
+  - MESOS_WORK_DIR=/var/lib/mesos
+  ports:
+    - ${MASTER_PORT}:5050
+    - ${MASTER_CLUSTER_PORT}:9000
