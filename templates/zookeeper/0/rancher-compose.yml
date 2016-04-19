@@ -17,7 +17,7 @@
       description: "Amount of memory to config zk."
       label: "Zk Memory (mb):"
       required: true
-      default: 512
+      default: 512 
       type: "string"
     - variable: "zk_interval"
       description: "Interval to poll/apply configuration changes. 0 to disable, reconfiguration will be done when you restart zk nodes"
@@ -25,12 +25,6 @@
       required: true
       default: 60
       type: "int"
-    - variable: "host_label"
-      description: "Hosts with label to deploy the kafka cluster"
-      label: "Host label:"
-      required: true
-      default: "stack=devops"
-      type: "string"
 zk:
   scale: ${zk_scale}
   health_check:

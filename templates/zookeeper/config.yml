@@ -1,8 +1,9 @@
-name: Apache Zookeeper
+name: Zookeeper
 description: |
-  (Experimental) Zookeeper cluster
+  Maintain configuration information, naming, provide 
+  distributed synchronization and group services
 version: 3.4.6-rancher1
-category: clustering
+category: Clustering
 maintainer: "Raul Sanchez <rawmind@gmail.com>"
 minimum_rancher_version: v0.56.0
 license: 
