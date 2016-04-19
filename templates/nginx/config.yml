@@ -1,5 +1,5 @@
 name: Nginx
 description: |
-  Nginx: Webserver
-version: latest
-category: "Webserver"
+  Nginx
+version: Nginx
+category: LEMP

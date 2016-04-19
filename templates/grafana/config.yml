@@ -1,4 +1,4 @@
-name: "Grafana"
-description: "Metrics Dashboards"
-version: "2.6"
-category: "Metrics"
+name: "Grafana 2"
+description: "Visualization dashboard"
+version: "2.6.0-mgolly1"
+category: Monitoring

@@ -1,6 +1,5 @@
-name: Sonatype Nexus
+name: Nexus
 description: |
-    Provides a ready to run SCM Manager instance
-version: 2.11.2
-category: Java
-
+  Sonatype Nexus Repository Manager
+version: 3
+category: Repositories

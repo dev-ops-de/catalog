@@ -1,19 +1,11 @@
 .catalog:
-  name: "nginx"
-  version: "latest"
-  description: |
-    "NGINX: NGINX Web and Loadbalancer Server"
-  uuid: nginx-0
-  minimum_rancher_version: v0.44.0
+  name: "Nginx"
+  version: "Latest"
+  description: "Nginx: get nginx"
   questions:
-    - variable: "NGINX_PORT"
-      label: 'Port:'
-      required: true
-      default: 80
-      type: int
-    - variable: NGINX_DIR
-      description: 'Data & configuration directory'
-      label: 'Directory:'
-      required: true
-      default: /www/web01
-      type: string
+    - variable: "indexer_filters"
+      description: |
+        không có gì ở đây hết kaka
+      label: "Logstash filters"
+      required: false
+      default: "hello word"

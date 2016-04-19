@@ -1,21 +1,13 @@
 .catalog:
-    name: "Sonatype Nexus"
-    version: "2.11.2"
-    description: "Nexus Artifacts Manager"
-    questions:
-      - variable: NEXUS_PORT
-        label: 'NEXUS Dashboard Port:'
-        required: true
-        default: 9001
-        type: int
-      - variable: NEXUS_VOLUME
-        label: 'NEXUS Volume:'
-        required: true
-        default: '/www/nexus/'
-        type: string
-nexus-data:
-  scale: 1
-nexus-server:
-  scale: 1
-
-
+  name: "Nexus"
+  version: "3"
+  description: "Sonatype Nexus Repository Manager"
+  uuid: nexus-3-0sdaf7g6-0
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: "vhost"
+      description: "Virtual Host"
+      label: "Virtual Host:"
+      required: true
+      default: "developer-customer.docker1.brandung.dev"
+      type: "string"

@@ -1,16 +1,17 @@
-nexus-data:
+app:
+  image: baselibrary/nexus:3.0
+  environment:
+    - VIRTUAL_HOST=${vhost}
+    - VIRTUAL_PORT=8081
   labels:
-    io.rancher.container.start_once: 'true'
-  entrypoint:
-  - /bin/true
-  image: sonatype/nexus:2.11.2
-  volumes:
-  - ${NEXUS_VOLUME}/sonatype-work
-nexus-server:
+    io.rancher.sidekicks: app-data
   ports:
-  - ${NEXUS_PORT}:8081/tcp
-  labels:
-    io.rancher.sidekicks: nexus-data
-  image: sonatype/nexus:2.11.2
+    - "5000-5100:5000-5100"
+
+app-data:
+  image: busybox:1.24
   volumes_from:
-  - nexus-data
+    - app
+  command: ["echo", "app data container"]
+  labels:
+    io.rancher.container.start_once: true

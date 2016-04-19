@@ -1,6 +1,6 @@
-broker:
+kafka:
   tty: true
-  image: rawmind/rancher-kafka:0.8.2-6
+  image: rawmind/rancher-kafka:0.9.0
   volumes:
   - /opt/kafka/data
   environment:
@@ -9,3 +9,5 @@ broker:
   - ZK_SERVICE=${zk_link}
   external_links:
   - ${zk_link}:zk
+  labels:
+    io.rancher.scheduler.affinity:host_label: ${host_label}

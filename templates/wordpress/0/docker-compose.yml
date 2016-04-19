@@ -1,46 +1,19 @@
 wordpress:
-  image: vibioh/wordpress:latest
-  labels:
-    io.rancher.container.start_once: true
-    io.rancher.sidekicks: mysql, php
-    traefik.enable: false
-  restart: 'no'
-  read_only: true
-  cpu_shares: 128
-  mem_limit: 67108864
-mysql:
-  image: vibioh/mysql:latest
-  labels:
-    traefik.enable: false
-  environment:
-  - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
-  - MYSQL_DATABASE=wordpress
-  - MYSQL_USER=wordpress
-  - MYSQL_PASSWORD=${WORDPRESS_PASSWORD}
-  volumes_from:
-  - wordpress
-  log_opt:
-    max-size: '50m'
-  restart: 'no'
-  read_only: true
-  cpu_shares: 512
-  mem_limit: 268435456
-php:
-  image: vibioh/php:latest
-  labels:
-    traefik.frontend.value: '${WORDPRESS_NAME}.${DOMAIN}'
-    traefik.frontend.passHostHeader: 'true'
-    traefik.frontend.rule: 'Host'
-    traefik.port: '1080'
-  environment:
-    SMTP_URL: smtp
-    SMTP_PORT: 1025
+  image: wordpress
   links:
-  - mysql
-  volumes_from:
-  - wordpress
-  log_opt:
-    max-size: '50m'
-  restart: 'no'
-  cpu_shares: 512
-  mem_limit: 268435456
+    - wordpressdb:mysql
+  ports:
+    - 8088:80
+wordpressdb:
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: examplepass
+phpmyadmin:
+  image: corbinu/docker-phpmyadmin
+  links:
+    - wordpressdb:mysql
+  ports:
+    - 8189:80
+  environment:
+    MYSQL_USERNAME: root
+    MYSQL_ROOT_PASSWORD: examplepass
